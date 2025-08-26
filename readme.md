@@ -1,4 +1,4 @@
-# AutoHotKey Layered Macro Builder
+# AutoStreamDeck
 *The starting point to build your perfect macro keyboard.*
 
 Define macro layers and macros in code, automatically bound to your macro pad buttons. A user interface is generated from your configuration for easy management.
