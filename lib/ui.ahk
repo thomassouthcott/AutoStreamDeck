@@ -72,8 +72,8 @@ class LayerSelectGui {
          this.window.AddText("r1 center x" Layout.fn.label.x " y" Layout.fn.label.y " w" Layout.fn.label.w " h" Layout.fn.label.h " Section", Layout.showFn)
          ; Show the function key button
          fnButton := this.window.AddButton("x" Layout.fn.x " y" Layout.fn.y " w" Layout.fn.w " h" Layout.fn.h " disabled")
-         icon := Layout.GetEmptyIcon(Layout.keys[i])
-         CreateImageButton(this.buttons[i], 0, [icon, , , 32], [icon, , , 32])
+         icon := LayerSelectGui.GetEmptyIcon(Layout.fn)
+         CreateImageButton(fnButton, 0, [icon, , , 32], [icon, , , 32])
       }
    }
 

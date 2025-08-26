@@ -39,7 +39,10 @@ class Layout {
         this.layers := []
         this.SetLayers(Layers)
         ; display options
-        this.showFn := ShowFn
+        if (ShowFn) 
+            this.showFn := this.ShowFunctionKey(true, ShowFn)
+        else
+            this.showFn := false
         this.showMacroMarkers := ShowMacroMarkers
         this.showLabels := ShowLabels
         this.__ApplyLabels()
@@ -245,11 +248,13 @@ class Layout {
      */
     __ApplyLabels() {
         if (this.showLabels) {
+            this.fn.CalculateLabelledPosition()
             for i, k in this.keys {
                 k.CalculateLabelledPosition()
             }
         }
         else {
+            this.fn.CalculateUnlabelledPosition()
             for i, k in this.keys {
                 k.CalculateUnlabelledPosition()
             }
