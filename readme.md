@@ -6,19 +6,19 @@ Define macro layers and macros in code, automatically bound to your macro pad bu
 ## Getting Started
 
 1. **Install [AutoHotkey v2](https://www.autohotkey.com/download/)**
-2. **Edit `config.ahk`** – This is now the main configuration file for your macro pad. Here you define your layout, layers, and macros in a single place.
-3. **Run `main.ahk`** – This will load your configuration and start the macro pad UI.
-```
+2. **Edit `config.ahk`** â€“ This is now the main configuration file for your macro pad. Here you define your layout, layers, and macros in a single place.
+3. **Run `main.ahk`** â€“ This will load your configuration and start the macro pad UI.
+
 ### Editing `config.ahk`
 
 The `Config()` function in `config.ahk` returns a `Layout` object that defines your macro pad's structure. You specify:
 
 - The function key (e.g., `ScrollLock`)
-- The macro keys (e.g., `F13`–`F24`)
+- The macro keys (e.g., `F13`â€“`F24`)
 - The layers, each with a title, icon, and a list of macros
-```
+
 **Example:**
-```
+
 ```ahk
 Config() {
    return Layout(Key("ScrollLock", 4, 1, 2, 1), [
@@ -40,7 +40,7 @@ Config() {
    ], 11, , true, true, , )
 }
 ```
-```
+
 ## Layout Objects
 
 ### Setting up the Layout Object
@@ -53,15 +53,15 @@ Layout(FunctionKey, MacroKeys, Layers := [], Default := 1, ShowFn := false, Show
 
 **Parameters:**
 
-- `FunctionKey` – The key used as the function key (e.g., `Key("ScrollLock", 4, 1, 2, 1)`).
-- `MacroKeys` – An array of macro key definitions (e.g., `Key("F13", 1, 1)`, ...).
-- `Layers` – An array of layer objects (see above for how to define layers and macros).
-- `Default` – (Optional) The default layer index to start on (default: 1).
-- `ShowFn` – (Optional) Show the function key outline (default: false).
-- `ShowMacroMarkers` – (Optional) Show macro markers on the buttons (default: false).
-- `ShowLabels` – (Optional) Show labels on the buttons (default: false).
-- `UseMacroIcons` – (Optional) Use macro icons on buttons instead of layer icons when a macro is assigned and has a icon (default: false).
-- `IconAction` – (Optional) Set icon click action: `"Layer"` to switch layers (default), or `"Macro"` to trigger the macro action.
+- `FunctionKey` â€“ The key used as the function key (e.g., `Key("ScrollLock", 4, 1, 2, 1)`).
+- `MacroKeys` â€“ An array of macro key definitions (e.g., `Key("F13", 1, 1)`, ...).
+- `Layers` â€“ An array of layer objects (see above for how to define layers and macros).
+- `Default` â€“ (Optional) The default layer index to start on (default: 1).
+- `ShowFn` â€“ (Optional) Show the function key outline (default: false).
+- `ShowMacroMarkers` â€“ (Optional) Show macro markers on the buttons (default: false).
+- `ShowLabels` â€“ (Optional) Show labels on the buttons (default: false).
+- `UseMacroIcons` â€“ (Optional) Use macro icons on buttons instead of layer icons when a macro is assigned and has a icon (default: false).
+- `IconAction` â€“ (Optional) Set icon click action: `"Layer"` to switch layers (default), or `"Macro"` to trigger the macro action.
 
 See `lib/layout.ahk` for full documentation of all options and methods.
 
@@ -75,9 +75,9 @@ Layer(Title := "", Icon := "", Macros := [])
 
 **Parameters:**
 
-- `Title` – The name of the layer (string).
-- `Icon` – An `Icon` object for the layer (see below).
-- `Macros` – An array of macro objects (see above for how to define macros).
+- `Title` â€“ The name of the layer (string).
+- `Icon` â€“ An `Icon` object for the layer (see below).
+- `Macros` â€“ An array of macro objects (see above for how to define macros).
 
 See `lib/layer.ahk` for full documentation.
 
@@ -91,14 +91,14 @@ Icon(name)
 
 **Parameters:**
 
-- `name` – The name of the icon folder inside `img/` (string).
+- `name` â€“ The name of the icon folder inside `img/` (string).
 
 This will automatically set the following properties:
 
-- `icon.layer` – Path to the default layer icon (`img/name/layer.png`)
-- `icon.macro` – Path to the macro icon (`img/name/macro.png`)
-- `icon.selected` – Path to the selected layer icon (`img/name/selected.png`)
-- `icon.selectedMacro` – Path to the selected macro icon (`img/name/selected_macro.png`)
+- `icon.layer` â€“ Path to the default layer icon (`img/name/layer.png`)
+- `icon.macro` â€“ Path to the macro icon (`img/name/macro.png`)
+- `icon.selected` â€“ Path to the selected layer icon (`img/name/selected.png`)
+- `icon.selectedMacro` â€“ Path to the selected macro icon (`img/name/selected_macro.png`)
 
 See `lib/icon.ahk` for full documentation.
 
@@ -112,10 +112,10 @@ Macro(Action, Name, Description := "", Icon := "")
 
 **Parameters:**
 
-- `Action` – The function to be called when the macro is triggered.
-- `Name` – The label for the macro (string).
-- `Description` – (Optional) A brief description for tooltips or UI (string).
-- `Icon` – (Optional) An `Icon` object for the macro (see above).
+- `Action` â€“ The function to be called when the macro is triggered.
+- `Name` â€“ The label for the macro (string).
+- `Description` â€“ (Optional) A brief description for tooltips or UI (string).
+- `Icon` â€“ (Optional) An `Icon` object for the macro (see above).
 
 See `lib/macro.ahk` for full documentation.
 
@@ -134,11 +134,11 @@ VsCodeGoToDefinition() {
 
 ## File Structure
 
-- `config.ahk` – Main configuration (edit this file)
-- `main.ahk` – Entry point, loads your config and starts the UI
-- `commands/` – Macro function definitions (grouped by category)
-- `lib/` – Core library code (do not edit unless customizing core behavior)
-- `img/` – Icons and images for the UI
+- `config.ahk` â€“ Main configuration (edit this file)
+- `main.ahk` â€“ Entry point, loads your config and starts the UI
+- `commands/` â€“ Macro function definitions (grouped by category)
+- `lib/` â€“ Core library code (do not edit unless customizing core behavior)
+- `img/` â€“ Icons and images for the UI
 
 ## Showcase
 
